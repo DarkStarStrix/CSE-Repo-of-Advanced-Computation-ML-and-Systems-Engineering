@@ -11,9 +11,7 @@ All research in this repository is original, reproducible, and open-source. No a
 Each paper includes a BibTeX citation file (`CITATION.bib`). Use the commit or folder permalink as a persistent identifier.
 
 ## Papers
-
-- [AzureSky: Hybrid Optimization in Non-Convex Landscapes (2025)](./PAPERS/azure_sky_2025/)
-- [Quantifying Uncertainty in Neural Networks (2025)](./PAPERS/uncertainty_quant_2025/)
+adding them will update 
 
 ## Submission Guidelines
 
