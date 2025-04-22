@@ -1,0 +1,58 @@
+name: Verify Paper Submission
+
+on:
+  pull_request:
+    paths:
+      - 'PAPERS/**'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Find Changed Paper Directories
+        id: find-changed-dirs
+        run: |
+          CHANGED_DIRS=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -o "PAPERS/[^/]*" | sort | uniq)
+          echo "Changed paper directories: $CHANGED_DIRS"
+          echo "::set-output name=dirs::$CHANGED_DIRS"
+      
+      - name: Verify Paper Structure
+        run: |
+          for DIR in ${{ steps.find-changed-dirs.outputs.dirs }}; do
+            echo "Verifying structure of $DIR"
+            # Check required files
+            [ -f "$DIR/metadata.json" ] || { echo "❌ Missing metadata.json"; exit 1; }
+            [ -f "$DIR/CITATION.bib" ] || { echo "❌ Missing CITATION.bib"; exit 1; }
+            
+            # Check for PDF
+            PDF_COUNT=$(find "$DIR" -maxdepth 1 -name "*.pdf" | wc -l)
+            if [ "$PDF_COUNT" -eq 0 ]; then
+              echo "❌ No PDF found"
+              exit 1
+            fi
+            
+            # Verify JSON format
+            cat "$DIR/metadata.json" | jq . > /dev/null || { echo "❌ Invalid JSON format in metadata.json"; exit 1; }
+            
+            # Check metadata fields
+            TITLE=$(jq -r '.title' "$DIR/metadata.json")
+            AUTHOR=$(jq -r '.author' "$DIR/metadata.json")
+            DATE=$(jq -r '.date' "$DIR/metadata.json")
+            
+            [ "$TITLE" = "null" ] && { echo "❌ Missing title in metadata.json"; exit 1; }
+            [ "$AUTHOR" = "null" ] && { echo "❌ Missing author in metadata.json"; exit 1; }
+            [ "$DATE" = "null" ] && { echo "❌ Missing date in metadata.json"; exit 1; }
+            
+            echo "✅ Paper structure verified"
+          done
+      
+      - name: Verify Code and Figures Directories
+        run: |
+          for DIR in ${{ steps.find-changed-dirs.outputs.dirs }}; do
+            echo "Checking code and figures directories in $DIR"
+            # Check if directories exist
+            [ -d "$DIR/code" ] || { echo "⚠️ No code directory found"; }
+            [ -d "$DIR/figures" ] || { echo "⚠️ No figures directory found"; }
+          done
