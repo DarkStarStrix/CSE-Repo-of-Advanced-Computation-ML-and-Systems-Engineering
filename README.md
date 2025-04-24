@@ -1,32 +1,73 @@
 # CSE++ Journal of Advanced Computation, ML, and Systems Engineering
 
-An independent open-access publishing archive maintained by Allan.
+A **decentralized, open-access,
+community-governed publication platform** for high-quality research in scientific machine learning,
+advanced optimization, computational modeling, systems engineering, and related fields.
 
-## Publishing Philosophy
+## Focus Areas
 
-All research in this repository is original, reproducible, and open-source. No affiliations. No institutions. Just pure science.
+- Scientific Machine Learning
+- Advanced Optimization
+- Computational Modeling 
+- Systems Engineering
+- Mathematics & Physics
+- Quantum Computing
+- Scientific Infrastructure
 
-## How to Cite
-
-Each paper includes a BibTeX citation file (`CITATION.bib`). Use the commit or folder permalink as a persistent identifier.
-
-## Papers
-adding them will update 
-
-## Submission Guidelines
+## How to Submit
 
 1. Fork this repository
-2. Create a new folder in `PAPERS/` with the format `title_year/`
-3. Include:
-   - Your paper as a PDF (one-column LaTeX format)
-   - All supporting code and figures
+2. Create a new folder in `PAPERS/` with format: `title_year/`
+3. Include required files:
+   - Paper as PDF (one-column LaTeX format)
+   - All supporting code in `code/`
+   - Figures in `figures/` 
    - `metadata.json` with proper fields
    - `CITATION.bib` file
+   - `methodology.md` explaining your approach
 4. Submit a pull request
 
-## Publishing Standards
+## Review Process
 
-- All papers must include reproducible code
-- One-column LaTeX formatting preferred
-- All figures and data must be included
-- No paywalls, no restrictions, full open access
+Every submission undergoes peer review checking:
+- Technical quality and soundness
+- Clarity & reproducibility
+- Novelty & significance
+- Code quality & documentation
+
+## Organization 
+
+- Papers organized by category and publication date
+- Monthly releases bundle accepted papers
+- Top papers featured on GitHub Pages
+- Full searchable index with DOIs
+
+## Standards
+
+- All code must be reproducible
+- Clear methodology required
+- Raw data included where applicable
+- Zero tolerance for misconduct
+- Merit-based acceptance only
+
+## Resources
+
+- [Detailed Structure & Guidelines](STRUCTURE.md)
+- [Paper Template](templates/paper_template/)
+- [Code Guidelines](docs/code_guidelines.md)
+- [Review Process](docs/review_process.md)
+
+## Community
+
+This is a community-driven journal. Contributors can become:
+- Reviewers (after accepted paper)
+- Editors (trusted reviewers)
+- Maintainers (help organize)
+
+## Citation
+
+Each paper includes a `CITATION.bib` file. Use the DOI or folder permalink as a persistent identifier.
+
+## Philosophy
+
+Open science, reproducible research, no institutional barriers. Just pure advancement of knowledge.

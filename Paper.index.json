@@ -1,0 +1,23 @@
+{
+  "papers": [
+    {
+      "id": "azure_sky_2025",
+      "title": "AzureSky: Hybrid Optimization in Non-Convex Landscapes",
+      "author": "Allan",
+      "date": "2025-04-01",
+      "abstract": "This paper introduces a novel hybrid optimization approach combining simulated annealing with Adam optimization for non-convex landscapes, demonstrating superior performance on benchmark problems.",
+      "keywords": ["optimization", "non-convex", "machine learning", "simulated annealing", "Adam optimizer"],
+      "doi": "csepp.2025.a7bf63c9",
+      "url": "https://github.com/lambda-ark/csepp-journal/tree/main/PAPERS/azure_sky_2025"
+    }
+  ],
+  "monthly_snapshots": {
+    "2025-04": [
+      "azure_sky_2025"
+    ]
+  },
+  "featured": [
+    "azure_sky_2025"
+  ],
+  "last_updated": "2025-04-22"
+}
