@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE++ Knowledge Graph</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .graph-container {
+            width: 100%;
+            height: 100vh;
+            background: #1a1a1a;
+        }
+
+        .node circle {
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .link {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+
+        .node text {
+            fill: #fff;
+            font-size: 12px;
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .search-box {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+
+        .info-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
+            width: 300px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <a href="index.html" class="btn">Back to Papers</a>
+        <input type="text" class="search-box" id="search" placeholder="Search papers...">
+        <div>
+            <label>
+                <input type="checkbox" id="show-labels" checked>
+                Show Labels
+            </label>
+        </div>
+        <div>
+            <label>Link Strength:</label>
+            <input type="range" id="link-strength" min="0" max="100" value="50">
+        </div>
+    </div>
+
+    <div class="info-panel" id="info-panel">
+        <h3 id="paper-title"></h3>
+        <p id="paper-author"></p>
+        <p id="paper-abstract"></p>
+        <div id="paper-keywords"></div>
+        <a href="#" id="paper-link" target="_blank">View Paper</a>
+    </div>
+
+    <div id="graph" class="graph-container"></div>
+
+    <script src="js/graph.js"></script>
+</body>
+</html>

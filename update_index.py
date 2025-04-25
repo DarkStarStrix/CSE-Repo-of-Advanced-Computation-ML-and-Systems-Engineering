@@ -6,10 +6,9 @@ This script updates the paper index and monthly snapshots
 based on the papers in the PAPERS directory.
 """
 
-import os
-import sys
-import json
 import datetime
+import json
+import sys
 from pathlib import Path
 
 

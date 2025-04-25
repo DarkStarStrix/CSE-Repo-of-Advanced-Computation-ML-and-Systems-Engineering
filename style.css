@@ -1,0 +1,289 @@
+/* Global Variables */
+:root {
+    --primary-blue: #2980b9;
+    --primary-orange: #e67e22;
+    --black: #000;
+    --neutral-gray: #bdc3c7;
+    --background: #f4f4f4;
+    --white: #fff;
+}
+
+/* Global Reset */
+body, h1, h2, h3, h4, h5, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+    background: var(--background);
+    padding-top: 80px;
+}
+
+/* Header */
+.main-header {
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1.25rem 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo .subtitle {
+    font-size: 0.9rem;
+    color: var(--neutral-gray);
+}
+
+/* Navigation */
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-orange);
+}
+
+/* Hero Section */
+.hero {
+    background: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-blue);
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: var(--black);
+}
+
+.buttons .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin: 0 0.5rem;
+}
+
+.btn.primary {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn.primary:hover {
+    background: var(--primary-orange);
+}
+
+.btn.secondary {
+    background: var(--primary-orange);
+    color: var(--white);
+}
+
+.btn.secondary:hover {
+    background: var(--primary-blue);
+}
+
+/* Section Layout */
+section {
+    padding: 4rem 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Paper Sections */
+.papers-grid, .papers-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.papers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.paper-card, .paper-item {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Submission Process */
+.submit-paper .submission-process .step {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.step-number {
+    background: var(--primary-blue);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Submission Tools Box */
+.submit-paper .submission-tools {
+    background: var(--white);
+    border: 1px solid var(--neutral-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.submit-paper .submission-tools pre {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.copy-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.3s;
+}
+
+.copy-btn:hover {
+    background: var(--primary-orange);
+}
+
+/* Dataset Generator */
+.dataset-generator {
+    background: var(--white);
+    padding: 4rem 0;
+}
+
+.dataset-options, .pricing-tiers, .datagen-extra {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.dataset-options {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* New datagen extra options box */
+.datagen-extra {
+    grid-template-columns: 1fr 1fr;
+    padding: 1.5rem;
+    border: 1px solid var(--neutral-gray);
+    border-radius: 8px;
+}
+
+/* Style for individual datagen fields */
+.datagen-extra .option {
+    background: var(--background);
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Enterprise License Option */
+.enterprise-license {
+    border: 2px dashed var(--primary-orange);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.pricing-tiers {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.pricing-tier {
+    padding: 1.5rem;
+    border: 1px solid var(--neutral-gray);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.tier-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--primary-blue);
+}
+
+.tier-price {
+    font-size: 2rem;
+    color: var(--primary-orange);
+    margin: 1rem 0;
+}
+
+/* Footer */
+.main-footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.main-footer p {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    list-style: none;
+    display: inline-flex;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-orange);
+}

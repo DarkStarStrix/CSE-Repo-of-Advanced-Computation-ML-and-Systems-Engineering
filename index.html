@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE++ Journal of Advanced Computation, ML, and Systems Engineering</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <h1>CSE++</h1>
+                        <span class="subtitle">Journal of Advanced Computation, ML, and Systems Engineering</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#featured" class="nav-link"><i class="fas fa-star"></i> Featured</a></li>
+                        <li><a href="#monthly" class="nav-link"><i class="fas fa-calendar"></i> Monthly Snapshot</a></li>
+                        <li><a href="#all-papers" class="nav-link"><i class="fas fa-scroll"></i> All Papers</a></li>
+                        <li><a href="graph.html" class="nav-link"><i class="fas fa-project-diagram"></i> Knowledge Graph</a></li>
+                        <li><a href="#submit" class="btn primary"><i class="fas fa-upload"></i> Submit Paper</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Democratizing Scientific Publishing</h2>
+            <p>An open-access, community-governed, and technically rigorous publishing platform for computational researchers, systems engineers, and ML scientists.</p>
+            <div class="buttons">
+                <a href="#submit" class="btn primary">Submit Paper</a>
+                <a href="https://github.com/DarkStarStrix/CSE-Repo-of-Advanced-Computation-ML-and-Systems-Engineering" class="btn secondary">GitHub Repository</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured" class="featured">
+        <div class="container">
+            <h2>Featured Papers</h2>
+            <div class="papers-grid" id="featured-papers">
+                <!-- Featured papers will be dynamically inserted here -->
+                <div class="paper-card loading"></div>
+                <div class="paper-card loading"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="monthly" class="monthly-snapshot">
+        <div class="container">
+            <h2>Monthly Snapshot <span id="current-month"></span></h2>
+            <div class="papers-grid" id="monthly-papers">
+                <!-- Monthly papers will be dynamically inserted here -->
+                <div class="paper-card loading"></div>
+                <div class="paper-card loading"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="all-papers" class="all-papers">
+        <div class="container">
+            <h2>All Papers</h2>
+            <div class="filter-bar">
+                <input type="text" id="search-papers" placeholder="Search papers by title, author, or keywords...">
+                <select id="sort-papers">
+                    <option value="date-desc">Newest First</option>
+                    <option value="date-asc">Oldest First</option>
+                    <option value="title">Title (A-Z)</option>
+                </select>
+            </div>
+            <div class="papers-list" id="all-papers-list">
+                <!-- All papers will be dynamically inserted here -->
+                <div class="paper-item loading"></div>
+                <div class="paper-item loading"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="submit" class="submit-paper">
+        <div class="container">
+            <h2>Submit Your Paper</h2>
+            <div class="submission-process">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Fork The Repository</h3>
+                        <p>Begin by forking the <a href="https://github.com/DarkStarStrix/CSE-Repo-of-Advanced-Computation-ML-and-Systems-Engineering">CSE++ Journal repository</a> on GitHub.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Create Paper Directory</h3>
+                        <p>Create a directory for your paper in the <code>PAPERS/</code> folder with the format <code>paper_name_year/</code>.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Add Required Files</h3>
+                        <p>Include your paper as PDF, metadata.json, code, figures, and CITATION.bib following the structure requirements.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Submit Pull Request</h3>
+                        <p>Open a pull request to the main repository. Automated checks will verify your submission format.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="submission-tools">
+                <h3>Submission Tools</h3>
+                <p>Use our provided script to set up your paper structure:</p>
+                <pre><code>./scripts/setup_paper.sh your_paper_name_2025</code></pre>
+                <a href="https://github.com/lambda-ark/csepp-journal/blob/main/CONTRIBUTING.md" class="btn secondary">View Full Guidelines</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="dataset-generator" class="dataset-generator">
+        <div class="container">
+            <h2>Dataset Generator</h2>
+            <p>Generate custom training datasets from our paper collection.</p>
+
+            <div class="dataset-options">
+                <div class="field-selection">
+                    <h3>Select Fields</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="ml"> Machine Learning</label>
+                        <label><input type="checkbox" value="systems"> Systems Engineering</label>
+                        <label><input type="checkbox" value="computation"> Advanced Computation</label>
+                        <label><input type="checkbox" value="quantum"> Quantum Computing</label>
+                    </div>
+                </div>
+
+                <div class="date-range">
+                    <h3>Date Range</h3>
+                    <input type="date" id="date-from">
+                    <input type="date" id="date-to">
+                </div>
+            </div>
+
+            <div class="pricing-info">
+                <h3>Dataset Pricing</h3>
+                <div class="pricing-tiers">
+                    <div class="pricing-tier">
+                        <div class="tier-name">Free Tier</div>
+                        <div class="tier-size">Up to 1GB</div>
+                        <div class="tier-price">$0</div>
+                    </div>
+                    <div class="pricing-tier">
+                        <div class="tier-name">Standard Tier</div>
+                        <div class="tier-size">1GB - 10GB</div>
+                        <div class="tier-price">$10</div>
+                    </div>
+                    <div class="pricing-tier">
+                        <div class="tier-name">Premium Tier</div>
+                        <div class="tier-size">10GB - 100GB</div>
+                        <div class="tier-price">$50</div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="generate-dataset" class="btn primary">Generate Dataset</button>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 CSE++ Journal. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</body>
+</html>
