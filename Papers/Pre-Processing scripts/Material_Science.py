@@ -8,7 +8,7 @@ import warnings
 
 warnings.filterwarnings ('ignore')
 
-API_KEY = "aoV2C7VXpxARAsNuvL061mvKGzAOXH5L"
+API_KEY = ""
 
 # Define column structure
 COLUMNS = {
